@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BlogSpace - Dashboard</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <header>
+
+        <nav class="navbar">
+
+            <div class="logo">
+                <a href="index.html">BlogSpace</a>
+            </div>
+
+            <ul class="nav-links">
+
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+
+                <li>
+                    <a href="dashboard.html">Dashboard</a>
+                </li>
+
+                <li>
+                    <a href="create-blog.html">Create Blog</a>
+                </li>
+
+               <li>
+    <a href="#" onclick="logout()">Logout</a>
+</li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <section class="dashboard">
+
+            <div class="dashboard-header">
+
+                <div>
+
+                    <h1>Dashboard</h1>
+
+                    <p>
+                        Manage your blog posts and create new content.
+                    </p>
+
+                </div>
+
+
+                <a href="create-blog.html" class="btn">
+                    + Create Blog
+                </a>
+
+            </div>
+
+
+         <section class="dashboard-stats">
+
+    <div class="stat-card">
+
+        <h3>Total Blogs</h3>
+
+        <p id="totalBlogs">0</p>
+
+    </div>
+
+
+    <div class="stat-card">
+
+        <h3>Published</h3>
+
+        <p id="publishedBlogs">0</p>
+
+    </div>
+
+
+    <div class="stat-card">
+
+        <h3>Drafts</h3>
+
+        <p id="draftBlogs">0</p>
+
+    </div>
+
+</section>
+
+
+            <section class="my-blogs">
+
+    <h2>My Blogs</h2>
+
+    <div id="blogsContainer">
+
+        <!-- Blogs will be loaded here using JavaScript -->
+
+    </div>
+
+</section>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            © 2026 BlogSpace. All rights reserved.
+        </p>
+
+    </footer>
+    
+    <script src="js/script.js"></script>
+</body>
+</html>
