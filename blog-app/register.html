@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Create your free BlogSpace account – Join thousands of writers sharing their stories on BlogSpace." />
+  <title>Register – BlogSpace</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✍️</text></svg>" />
+</head>
+<body class="auth-page">
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="index.html" class="navbar-logo" aria-label="BlogSpace Home">
+        <span class="logo-icon" aria-hidden="true">✍️</span>
+        BlogSpace
+      </a>
+
+      <div class="navbar-menu">
+        <ul class="navbar-links" role="list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="login.html">Login</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+        </ul>
+      </div>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+      <a href="index.html">🏠 Home</a>
+      <a href="login.html">🔐 Login</a>
+      <a href="dashboard.html">📊 Dashboard</a>
+    </nav>
+  </nav>
+
+  <!-- ===== REGISTER FORM MAIN ===== -->
+  <main class="auth-main" id="main-content">
+    <div class="auth-card" style="max-width:520px;">
+
+      <!-- Card Header -->
+      <div class="auth-header">
+        <div class="auth-icon" aria-hidden="true">🚀</div>
+        <h1>Create Your Account</h1>
+        <p>Join thousands of bloggers on BlogSpace — it's free!</p>
+      </div>
+
+      <!-- Alert for success/error messages -->
+      <div class="alert" id="register-alert" role="alert"></div>
+
+      <!-- ===== REGISTER FORM ===== -->
+      <form id="register-form" novalidate aria-label="Registration form">
+
+        <!-- Full Name -->
+        <div class="form-group">
+          <label class="form-label" for="reg-name">Full Name</label>
+          <div class="form-input-wrapper">
+            <span class="input-icon" aria-hidden="true">👤</span>
+            <input
+              type="text"
+              id="reg-name"
+              name="full-name"
+              class="form-control"
+              placeholder="John Doe"
+              autocomplete="name"
+              required
+              aria-required="true"
+              aria-describedby="name-error"
+            />
+          </div>
+          <span class="form-error" id="name-error" role="alert" aria-live="polite"></span>
+        </div>
+
+        <!-- Email -->
+        <div class="form-group">
+          <label class="form-label" for="reg-email">Email Address</label>
+          <div class="form-input-wrapper">
+            <span class="input-icon" aria-hidden="true">📧</span>
+            <input
+              type="email"
+              id="reg-email"
+              name="email"
+              class="form-control"
+              placeholder="you@example.com"
+              autocomplete="email"
+              required
+              aria-required="true"
+              aria-describedby="reg-email-error"
+            />
+          </div>
+          <span class="form-error" id="reg-email-error" role="alert" aria-live="polite"></span>
+        </div>
+
+        <!-- Password -->
+        <div class="form-group">
+          <label class="form-label" for="reg-password">Password</label>
+          <div class="password-wrapper">
+            <span class="input-icon" aria-hidden="true" style="position:absolute;left:1rem;top:50%;transform:translateY(-50%);color:var(--text-light);">🔒</span>
+            <input
+              type="password"
+              id="reg-password"
+              name="password"
+              class="form-control"
+              placeholder="Minimum 8 characters"
+              autocomplete="new-password"
+              required
+              aria-required="true"
+              aria-describedby="reg-password-error"
+              style="padding-left:2.75rem;"
+            />
+            <button
+              type="button"
+              class="password-toggle"
+              id="toggle-reg-password"
+              aria-label="Toggle password visibility"
+              title="Show/hide password"
+            >👁️</button>
+          </div>
+          <!-- Password Strength Meter -->
+          <div class="password-strength" aria-live="polite">
+            <div class="strength-bar">
+              <div class="strength-fill" id="strength-fill" role="progressbar" aria-label="Password strength"></div>
+            </div>
+            <span class="strength-text" id="strength-text"></span>
+          </div>
+          <span class="form-error" id="reg-password-error" role="alert" aria-live="polite"></span>
+        </div>
+
+        <!-- Confirm Password -->
+        <div class="form-group">
+          <label class="form-label" for="reg-confirm">Confirm Password</label>
+          <div class="password-wrapper">
+            <span class="input-icon" aria-hidden="true" style="position:absolute;left:1rem;top:50%;transform:translateY(-50%);color:var(--text-light);">🔒</span>
+            <input
+              type="password"
+              id="reg-confirm"
+              name="confirm-password"
+              class="form-control"
+              placeholder="Re-enter your password"
+              autocomplete="new-password"
+              required
+              aria-required="true"
+              aria-describedby="confirm-error"
+              style="padding-left:2.75rem;"
+            />
+            <button
+              type="button"
+              class="password-toggle"
+              id="toggle-reg-confirm"
+              aria-label="Toggle confirm password visibility"
+              title="Show/hide password"
+            >👁️</button>
+          </div>
+          <span class="form-error" id="confirm-error" role="alert" aria-live="polite"></span>
+        </div>
+
+        <!-- Terms & Conditions Checkbox -->
+        <div class="form-group">
+          <div class="checkbox-group">
+            <input type="checkbox" id="reg-terms" name="terms" required aria-required="true" aria-describedby="terms-error" />
+            <label for="reg-terms">
+              I agree to the
+              <a href="#" style="color:var(--primary); font-weight:600;" onclick="alert('Terms & Conditions: Use BlogSpace responsibly.')">Terms & Conditions</a>
+              and
+              <a href="#" style="color:var(--primary); font-weight:600;" onclick="alert('Privacy Policy: We do not share your data.')">Privacy Policy</a>
+            </label>
+          </div>
+          <span class="form-error" id="terms-error" role="alert" aria-live="polite"></span>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" id="register-btn" class="btn btn-primary" style="width:100%; justify-content:center; padding:0.875rem;">
+          <span class="btn-spinner" id="register-spinner" aria-hidden="true"></span>
+          <span class="btn-text">🚀 Create My Account</span>
+        </button>
+
+      </form>
+
+      <!-- Footer Links -->
+      <div class="auth-footer-links" style="margin-top:1.25rem;">
+        Already have an account?
+        <a href="login.html" id="go-to-login">Sign in →</a>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

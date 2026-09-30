@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="BlogSpace Dashboard – Manage your blog posts, view statistics, and create new articles." />
+  <title>Dashboard – BlogSpace</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✍️</text></svg>" />
+</head>
+<body class="dashboard-page">
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="index.html" class="navbar-logo" aria-label="BlogSpace Home">
+        <span class="logo-icon" aria-hidden="true">✍️</span>
+        BlogSpace
+      </a>
+
+      <div class="navbar-menu">
+        <ul class="navbar-links" role="list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="dashboard.html" class="active">Dashboard</a></li>
+          <li><a href="create-blog.html">Write</a></li>
+        </ul>
+        <div class="navbar-actions">
+          <a href="create-blog.html" class="btn btn-primary btn-sm" id="nav-create-btn">+ New Blog</a>
+          <a href="login.html" class="btn btn-outline btn-sm" id="nav-logout-btn">Logout</a>
+        </div>
+      </div>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+      <a href="index.html">🏠 Home</a>
+      <a href="dashboard.html">📊 Dashboard</a>
+      <a href="create-blog.html">✏️ Write a Blog</a>
+      <a href="login.html">🔐 Logout</a>
+    </nav>
+  </nav>
+
+  <!-- ===== DASHBOARD HEADER ===== -->
+  <header class="dashboard-header" role="banner">
+    <div class="container">
+      <div class="dashboard-header-inner">
+        <div class="dashboard-title">
+          <h1 id="welcome-name">Welcome back, Blogger! 👋</h1>
+          <p>Manage your content, track your stats, and keep writing great things.</p>
+        </div>
+        <a href="create-blog.html" class="btn btn-outline-white" id="create-new-btn" style="border-color:rgba(255,255,255,0.5);">
+          ✍️ + Create New Blog
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <div class="container">
+
+      <!-- ===== STATISTICS CARDS ===== -->
+      <section aria-label="Blog statistics">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-icon blue" aria-hidden="true">📝</div>
+            <div class="stat-info">
+              <div class="stat-number" id="stat-total">0</div>
+              <div class="stat-label">Total Blogs</div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon green" aria-hidden="true">✅</div>
+            <div class="stat-info">
+              <div class="stat-number" id="stat-published">0</div>
+              <div class="stat-label">Published</div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon purple" aria-hidden="true">📋</div>
+            <div class="stat-info">
+              <div class="stat-number" id="stat-drafts">0</div>
+              <div class="stat-label">Drafts</div>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon orange" aria-hidden="true">👁️</div>
+            <div class="stat-info">
+              <div class="stat-number" id="stat-views">0</div>
+              <div class="stat-label">Total Views</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== MY BLOGS SECTION ===== -->
+      <section aria-labelledby="my-blogs-heading">
+
+        <div class="dashboard-section-header">
+          <h2 id="my-blogs-heading">📚 My Blog Posts</h2>
+          <div style="display:flex; gap:0.75rem; align-items:center; flex-wrap:wrap;">
+            <!-- Filter buttons -->
+            <button
+              class="btn btn-outline btn-sm"
+              id="filter-all"
+              onclick="filterBlogs('all')"
+              aria-pressed="true"
+            >All</button>
+            <button
+              class="btn btn-outline btn-sm"
+              id="filter-published"
+              onclick="filterBlogs('published')"
+              aria-pressed="false"
+            >Published</button>
+            <button
+              class="btn btn-outline btn-sm"
+              id="filter-draft"
+              onclick="filterBlogs('draft')"
+              aria-pressed="false"
+            >Drafts</button>
+            <a href="create-blog.html" class="btn btn-primary btn-sm" id="add-blog-btn">+ Add Blog</a>
+          </div>
+        </div>
+
+        <!-- Blog Table Wrapper -->
+        <div class="blogs-table-wrap">
+          <table class="blogs-table" aria-label="My blog posts table">
+            <thead>
+              <tr>
+                <th scope="col">Title</th>
+                <th scope="col">Category</th>
+                <th scope="col">Status</th>
+                <th scope="col">Date</th>
+                <th scope="col">Views</th>
+                <th scope="col">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="blogs-tbody">
+              <!-- Rows injected by JavaScript -->
+            </tbody>
+          </table>
+
+          <!-- Empty state (shown when no blogs exist) -->
+          <div class="empty-state" id="empty-state" style="display:none;" role="status">
+            <div class="empty-icon" aria-hidden="true">📭</div>
+            <h3>No blog posts yet</h3>
+            <p>Start writing your first blog post and share it with the world!</p>
+            <a href="create-blog.html" class="btn btn-primary" id="empty-create-btn">✍️ Write Your First Blog</a>
+          </div>
+        </div>
+
+      </section>
+
+    </div><!-- /.container -->
+  </main>
+
+  <!-- ===== BLOG VIEW MODAL ===== -->
+  <div class="modal-overlay" id="blog-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 id="modal-title">Blog Title</h3>
+        <button class="modal-close" onclick="closeModal()" aria-label="Close modal">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-meta">
+          <span id="modal-category" aria-label="Category">📂 Category</span>
+          <span id="modal-date" aria-label="Date">📅 Date</span>
+          <span id="modal-status" aria-label="Status">● Status</span>
+          <span id="modal-views" aria-label="Views">👁️ Views</span>
+        </div>
+        <p id="modal-content">Blog content goes here...</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer role="contentinfo" style="margin-top:3rem;">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>© 2024 BlogSpace – Module 1 Frontend Internship Project</p>
+        <p style="font-size:0.8125rem; color:rgba(255,255,255,0.4);">HTML · CSS · Vanilla JavaScript</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script>
+    // ============================================================
+    // Dashboard-specific: Filter buttons functionality
+    // This filters the table rows by status without a page reload
+    // ============================================================
+    function filterBlogs(filter) {
+      const rows = document.querySelectorAll('#blogs-tbody tr');
+      const emptyState = document.getElementById('empty-state');
+      let visibleCount = 0;
+
+      rows.forEach(row => {
+        const statusBadge = row.querySelector('.status-badge');
+        if (!statusBadge) return;
+
+        const isPublished = statusBadge.classList.contains('published');
+        const isDraft     = statusBadge.classList.contains('draft');
+
+        let show = false;
+        if (filter === 'all')       show = true;
+        if (filter === 'published') show = isPublished;
+        if (filter === 'draft')     show = isDraft;
+
+        row.style.display = show ? '' : 'none';
+        if (show) visibleCount++;
+      });
+
+      // Show empty state if no rows visible
+      if (emptyState) {
+        emptyState.style.display = visibleCount === 0 ? 'block' : 'none';
+      }
+
+      // Update filter button active state
+      ['filter-all', 'filter-published', 'filter-draft'].forEach(id => {
+        const btn = document.getElementById(id);
+        if (btn) btn.setAttribute('aria-pressed', 'false');
+      });
+
+      const activeBtn = document.getElementById(`filter-${filter}`);
+      if (activeBtn) activeBtn.setAttribute('aria-pressed', 'true');
+    }
+  </script>
+</body>
+</html>

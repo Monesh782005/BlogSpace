@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="BlogSpace – A modern platform to share your stories, ideas, and insights with the world. Discover featured blog posts on technology, programming, and more." />
+  <title>BlogSpace – Share Your Stories With the World</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✍️</text></svg>" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="index.html" class="navbar-logo" aria-label="BlogSpace Home">
+        <span class="logo-icon" aria-hidden="true">✍️</span>
+        BlogSpace
+      </a>
+
+      <!-- Desktop menu -->
+      <div class="navbar-menu">
+        <ul class="navbar-links" role="list">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="create-blog.html">Write</a></li>
+        </ul>
+        <div class="navbar-actions">
+          <a href="login.html" class="btn btn-outline btn-sm">Login</a>
+          <a href="register.html" class="btn btn-primary btn-sm">Get Started</a>
+        </div>
+      </div>
+
+      <!-- Hamburger for mobile -->
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <!-- Mobile dropdown nav -->
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+      <a href="index.html">🏠 Home</a>
+      <a href="dashboard.html">📊 Dashboard</a>
+      <a href="create-blog.html">✏️ Write a Blog</a>
+      <a href="login.html">🔐 Login</a>
+      <a href="register.html">🚀 Get Started</a>
+    </nav>
+  </nav>
+
+  <main>
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span aria-hidden="true"></span>
+            Now live – Start writing for free
+          </div>
+
+          <h1 id="hero-heading">
+            Share Your <span class="highlight">Stories</span><br />
+            With the World
+          </h1>
+
+          <p>
+            BlogSpace is your personal platform to write, publish, and share ideas that matter.
+            Join thousands of writers expressing their creativity every day.
+          </p>
+
+          <div class="hero-actions">
+            <a href="register.html" class="btn btn-primary btn-lg" id="start-writing-btn">
+              ✍️ Start Writing
+            </a>
+            <a href="#featured-blogs" class="btn btn-outline-white btn-lg" id="explore-blogs-btn">
+              🔍 Explore Blogs
+            </a>
+          </div>
+
+          <!-- Stats -->
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <span class="number" data-target="2400" data-suffix="+">2400+</span>
+              <span class="label">Blog Posts</span>
+            </div>
+            <div class="hero-stat">
+              <span class="number" data-target="850" data-suffix="+">850+</span>
+              <span class="label">Writers</span>
+            </div>
+            <div class="hero-stat">
+              <span class="number" data-target="12000" data-suffix="+">12k+</span>
+              <span class="label">Readers</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FEATURES SECTION ===== -->
+    <section class="features-section" aria-labelledby="features-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Why BlogSpace?</span>
+          <h2 id="features-heading">Everything You Need to Blog</h2>
+          <p>A simple yet powerful platform designed for writers who want to focus on what matters — their words.</p>
+        </div>
+
+        <div class="features-grid">
+          <article class="feature-card">
+            <div class="feature-icon">✍️</div>
+            <h3>Easy Writing</h3>
+            <p>A clean, distraction-free editor lets you focus entirely on crafting your best content.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon">📱</div>
+            <h3>Fully Responsive</h3>
+            <p>Your blog looks beautiful on every device — desktop, tablet, or smartphone.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon">🚀</div>
+            <h3>Instant Publishing</h3>
+            <p>Publish your articles instantly or save them as drafts to polish later.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FEATURED BLOGS SECTION ===== -->
+    <section class="section-padding" id="featured-blogs" aria-labelledby="blogs-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Featured Articles</span>
+          <h2 id="blogs-heading">Explore Top Blog Posts</h2>
+          <p>Hand-picked articles from our community of passionate writers. Dive in and get inspired.</p>
+        </div>
+
+        <div class="blogs-grid">
+
+          <!-- Blog Card 1 -->
+          <article class="blog-card">
+            <div class="card-image-placeholder" style="background: linear-gradient(135deg, #4f46e5, #7c3aed);">🌐</div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="card-category">Technology</span>
+                <span class="card-date">Sep 15, 2024</span>
+              </div>
+              <h3 class="card-title">The Future of Web Development</h3>
+              <p class="card-desc">
+                An exploration of upcoming trends in web development — from AI-powered tools and WebAssembly to edge computing and the evolving JavaScript ecosystem.
+              </p>
+              <div class="card-footer">
+                <div class="card-author">
+                  <div class="author-avatar" aria-hidden="true">AJ</div>
+                  <span class="author-name">Alex Johnson</span>
+                </div>
+                <a href="dashboard.html" class="btn btn-outline btn-sm" id="read-more-1">Read More →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Blog Card 2 -->
+          <article class="blog-card">
+            <div class="card-image-placeholder" style="background: linear-gradient(135deg, #0ea5e9, #06b6d4);">💡</div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="card-category">Tutorial</span>
+                <span class="card-date">Sep 10, 2024</span>
+              </div>
+              <h3 class="card-title">Getting Started With JavaScript</h3>
+              <p class="card-desc">
+                A beginner-friendly guide to understanding JavaScript fundamentals — variables, functions, DOM manipulation, and writing your very first interactive webpage.
+              </p>
+              <div class="card-footer">
+                <div class="card-author">
+                  <div class="author-avatar" aria-hidden="true">SM</div>
+                  <span class="author-name">Sara Miller</span>
+                </div>
+                <a href="dashboard.html" class="btn btn-outline btn-sm" id="read-more-2">Read More →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Blog Card 3 -->
+          <article class="blog-card">
+            <div class="card-image-placeholder" style="background: linear-gradient(135deg, #10b981, #059669);">🏆</div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="card-category">Personal</span>
+                <span class="card-date">Sep 5, 2024</span>
+              </div>
+              <h3 class="card-title">My First Coding Project</h3>
+              <p class="card-desc">
+                The story of building my very first project — a simple to-do app — and all the lessons, mistakes, and breakthroughs I experienced along the way.
+              </p>
+              <div class="card-footer">
+                <div class="card-author">
+                  <div class="author-avatar" aria-hidden="true">RK</div>
+                  <span class="author-name">Raj Kumar</span>
+                </div>
+                <a href="dashboard.html" class="btn btn-outline btn-sm" id="read-more-3">Read More →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Blog Card 4 -->
+          <article class="blog-card">
+            <div class="card-image-placeholder" style="background: linear-gradient(135deg, #f59e0b, #d97706);">📚</div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="card-category">Career</span>
+                <span class="card-date">Sep 20, 2024</span>
+              </div>
+              <h3 class="card-title">Tips for Learning Programming</h3>
+              <p class="card-desc">
+                Practical advice for beginners who want to learn programming effectively without burning out — including resource recommendations, habits, and mindset shifts.
+              </p>
+              <div class="card-footer">
+                <div class="card-author">
+                  <div class="author-avatar" aria-hidden="true">PL</div>
+                  <span class="author-name">Priya Lal</span>
+                </div>
+                <a href="dashboard.html" class="btn btn-outline btn-sm" id="read-more-4">Read More →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Blog Card 5 -->
+          <article class="blog-card">
+            <div class="card-image-placeholder" style="background: linear-gradient(135deg, #ec4899, #db2777);">🎨</div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="card-category">Design</span>
+                <span class="card-date">Sep 18, 2024</span>
+              </div>
+              <h3 class="card-title">CSS Grid vs Flexbox Guide</h3>
+              <p class="card-desc">
+                A practical comparison of CSS Grid and Flexbox to help you choose the right layout tool for every situation — with clear examples and use cases.
+              </p>
+              <div class="card-footer">
+                <div class="card-author">
+                  <div class="author-avatar" aria-hidden="true">NK</div>
+                  <span class="author-name">Nina Kim</span>
+                </div>
+                <a href="dashboard.html" class="btn btn-outline btn-sm" id="read-more-5">Read More →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Blog Card 6 -->
+          <article class="blog-card">
+            <div class="card-image-placeholder" style="background: linear-gradient(135deg, #8b5cf6, #6d28d9);">⚡</div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span class="card-category">Technology</span>
+                <span class="card-date">Sep 22, 2024</span>
+              </div>
+              <h3 class="card-title">Why Every Dev Should Use Git</h3>
+              <p class="card-desc">
+                Git is not just a tool — it's a superpower for developers. Learn why version control is essential and how to get started with GitHub in under 30 minutes.
+              </p>
+              <div class="card-footer">
+                <div class="card-author">
+                  <div class="author-avatar" aria-hidden="true">OB</div>
+                  <span class="author-name">Omar Bilal</span>
+                </div>
+                <a href="dashboard.html" class="btn btn-outline btn-sm" id="read-more-6">Read More →</a>
+              </div>
+            </div>
+          </article>
+
+        </div><!-- /.blogs-grid -->
+
+        <!-- View All Button -->
+        <div style="text-align:center; margin-top: 2.5rem;">
+          <a href="dashboard.html" class="btn btn-primary btn-lg" id="view-all-btn">
+            View All Articles →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA SECTION ===== -->
+    <section style="background: var(--gradient-primary); padding: 5rem 0;" aria-labelledby="cta-heading">
+      <div class="container text-center">
+        <h2 id="cta-heading" style="font-family: var(--font-heading); font-size: clamp(1.75rem, 3.5vw, 2.5rem); color: #fff; margin-bottom: 1rem; font-weight: 700;">
+          Ready to Start Writing?
+        </h2>
+        <p style="color: rgba(255,255,255,0.8); font-size: 1.0625rem; max-width: 500px; margin: 0 auto 2rem;">
+          Join thousands of bloggers on BlogSpace. It's free, fast, and easy to get started.
+        </p>
+        <div class="flex flex-center gap-md" style="flex-wrap: wrap;">
+          <a href="register.html" class="btn btn-outline-white btn-lg" id="cta-register-btn">Create Free Account</a>
+          <a href="login.html" class="btn btn-primary btn-lg" style="background:rgba(255,255,255,0.15); border:2px solid rgba(255,255,255,0.4);" id="cta-login-btn">Sign In</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Brand -->
+        <div class="footer-brand">
+          <div class="logo">
+            <span class="logo-icon" aria-hidden="true">✍️</span>
+            BlogSpace
+          </div>
+          <p>
+            A modern blogging platform for writers who want to share their stories, ideas, and expertise with the world. Simple. Fast. Beautiful.
+          </p>
+        </div>
+
+        <!-- Nav Links -->
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="create-blog.html">Write a Blog</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="register.html">Register</a></li>
+          </ul>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-col">
+          <h4>Module 1 – Day 1–4</h4>
+          <ul>
+            <li><a href="#">HTML Basics ✓</a></li>
+            <li><a href="#">CSS Layouts ✓</a></li>
+            <li><a href="#">JavaScript DOM ✓</a></li>
+            <li><a href="#">Responsive Design ✓</a></li>
+            <li><a href="#">Form Validation ✓</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2024 BlogSpace. Built with ❤️ for Module 1 – Frontend Development Internship.</p>
+        <p style="font-size: 0.8125rem; color: rgba(255,255,255,0.4);">HTML · CSS · Vanilla JavaScript</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

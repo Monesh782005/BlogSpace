@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Login to BlogSpace – Sign in to your account to access your dashboard and manage your blog posts." />
+  <title>Login – BlogSpace</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✍️</text></svg>" />
+</head>
+<body class="auth-page">
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="index.html" class="navbar-logo" aria-label="BlogSpace Home">
+        <span class="logo-icon" aria-hidden="true">✍️</span>
+        BlogSpace
+      </a>
+
+      <div class="navbar-menu">
+        <ul class="navbar-links" role="list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="register.html">Register</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+        </ul>
+      </div>
+
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+      <a href="index.html">🏠 Home</a>
+      <a href="register.html">📝 Register</a>
+      <a href="dashboard.html">📊 Dashboard</a>
+    </nav>
+  </nav>
+
+  <!-- ===== LOGIN FORM MAIN ===== -->
+  <main class="auth-main" id="main-content">
+    <div class="auth-card">
+
+      <!-- Card Header -->
+      <div class="auth-header">
+        <div class="auth-icon" aria-hidden="true">🔐</div>
+        <h1>Welcome Back</h1>
+        <p>Sign in to your BlogSpace account</p>
+      </div>
+
+      <!-- Success / Error alert (hidden by default) -->
+      <div class="alert alert-success" id="login-alert" role="alert"></div>
+
+      <!-- ===== LOGIN FORM ===== -->
+      <form id="login-form" novalidate aria-label="Login form">
+
+        <!-- Email Field -->
+        <div class="form-group">
+          <label class="form-label" for="login-email">Email Address</label>
+          <div class="form-input-wrapper">
+            <span class="input-icon" aria-hidden="true">📧</span>
+            <input
+              type="email"
+              id="login-email"
+              name="email"
+              class="form-control"
+              placeholder="you@example.com"
+              autocomplete="email"
+              required
+              aria-required="true"
+              aria-describedby="email-error"
+            />
+          </div>
+          <span class="form-error" id="email-error" role="alert" aria-live="polite"></span>
+        </div>
+
+        <!-- Password Field -->
+        <div class="form-group">
+          <label class="form-label" for="login-password">
+            Password
+            <a href="#" id="forgot-password-link" style="float:right; font-weight:500; font-size:0.875rem; color:var(--primary);" onclick="alert('Password reset would be sent to your email in a real application.')">Forgot password?</a>
+          </label>
+          <div class="password-wrapper">
+            <span class="input-icon" aria-hidden="true" style="position:absolute;left:1rem;top:50%;transform:translateY(-50%);color:var(--text-light);">🔒</span>
+            <input
+              type="password"
+              id="login-password"
+              name="password"
+              class="form-control"
+              placeholder="Enter your password"
+              autocomplete="current-password"
+              required
+              aria-required="true"
+              aria-describedby="password-error"
+              style="padding-left:2.75rem;"
+            />
+            <button
+              type="button"
+              class="password-toggle"
+              id="toggle-password"
+              aria-label="Toggle password visibility"
+              title="Show/hide password"
+            >👁️</button>
+          </div>
+          <span class="form-error" id="password-error" role="alert" aria-live="polite"></span>
+        </div>
+
+        <!-- Remember Me Checkbox -->
+        <div class="form-group">
+          <div class="checkbox-group">
+            <input type="checkbox" id="remember-me" name="remember-me" />
+            <label for="remember-me">Keep me signed in on this device</label>
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" id="login-btn" class="btn btn-primary" style="width:100%; justify-content:center; padding:0.875rem;">
+          <span class="btn-spinner" id="login-spinner" aria-hidden="true"></span>
+          <span class="btn-text">Sign In to BlogSpace</span>
+        </button>
+
+      </form>
+
+      <!-- Divider -->
+      <div class="form-divider">or continue with</div>
+
+      <!-- Demo quick-login hint -->
+      <div style="background:rgba(79,70,229,0.06); border:1px solid rgba(79,70,229,0.15); border-radius:var(--radius-md); padding:0.875rem 1rem; margin-bottom:1rem;">
+        <p style="font-size:0.875rem; color:var(--text-medium); text-align:center;">
+          <strong>Demo Account:</strong> any email + any password (min 6 chars)
+        </p>
+      </div>
+
+      <!-- Footer Links -->
+      <div class="auth-footer-links">
+        Don't have an account?
+        <a href="register.html" id="go-to-register">Create one free →</a>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

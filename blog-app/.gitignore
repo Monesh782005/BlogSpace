@@ -1,0 +1,60 @@
+# BlogSpace .gitignore
+# Generated for Module 1 Frontend Development Internship Project
+
+# Operating System files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Editor directories and files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.sublime-project
+*.sublime-workspace
+
+# Node modules (if any tools are added later)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Package lock files (optional – uncomment if you want to ignore)
+# package-lock.json
+# yarn.lock
+
+# Build output directories (for future use)
+dist/
+build/
+.cache/
+
+# Environment files (never commit secrets!)
+.env
+.env.local
+.env.*.local
+
+# Log files
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.temp
+.temp/
+tmp/
+
+# Coverage reports (for future testing)
+coverage/
+
+# Compiled files (if any tools are added)
+*.min.js.map
+*.min.css.map
